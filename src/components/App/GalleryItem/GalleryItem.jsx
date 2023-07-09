@@ -1,8 +1,10 @@
 import axios from 'axios'
 import { useState } from 'react';
+import './GalleryItem.css'
 
 function GalleryItem({picGallery, fetchGallery}) {
-    const [isImageClicked, setImageClicked] = useState(false);
+    // const [isImageClicked, setImageClicked] = useState(false);
+    const [isHovered, setIsHovered] = useState(false)
 
 
 
@@ -15,26 +17,42 @@ function GalleryItem({picGallery, fetchGallery}) {
     })
 }
 
-const toggleContent = () => {
-    setImageClicked(!isImageClicked);
+// const toggleContent = () => {
+//     setImageClicked(!isImageClicked);
+//   }
+
+//   const handleClickDescription = () => {
+//     if (isImageClicked) {
+//       toggleContent();
+//     }
+//   }
+
+const handleHover = () => {
+    setIsHovered(true);
   }
 
-  const handleClickDescription = () => {
-    if (isImageClicked) {
-      toggleContent();
-    }
+  const handleHoverExit = () => {
+    setIsHovered(false);
   }
 
     return (
-        <div>
-            {/* <img src={picGallery.path}/>
-            <p>{picGallery.description}</p> */}
-            {isImageClicked ? (
-            <p onClick={handleClickDescription}>{picGallery.description}</p>) : (
-            <img src={picGallery.path} onClick={toggleContent} />
+        <>
+        <div className="post-box">
+            {/* <div className="image-box">
+                {isImageClicked ? (
+                <p onClick={handleClickDescription}>{picGallery.description}</p>) : (
+                <img src={picGallery.path} onClick={toggleContent} className="post-image"/>)}
+            </div> */}
+            <div className="image-box" onMouseEnter={handleHover} onMouseLeave={handleHoverExit}>
+                <img src={picGallery.path} className="post-image" alt="Gallery Picture/Desscription"/>
+                {isHovered && (<div className="description-fade">{picGallery.description}
+            </div>
             )}
-            <button onClick={clickGallery}>likes:{picGallery.likes}</button>
+      </div>
+            <button onClick={clickGallery} className="like-button">🖤</button>
+            <p className="like-text">{picGallery.likes} likes</p>
         </div>
+        </>
     )
 }
 export default GalleryItem

@@ -1,4 +1,8 @@
 .App {
+  display: grid;
+}
+
+.App {
   text-align: center;
 }
 
