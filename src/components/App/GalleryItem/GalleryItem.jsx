@@ -2,6 +2,11 @@ import axios from 'axios'
 import { useState } from 'react';
 import './GalleryItem.css'
 
+// I had the photo toggling to the description on click but I found
+// it really jarring to use. I switched it to a hover transition 
+// that feels smoother, All the other code is here, just commented 
+// out.
+
 function GalleryItem({picGallery, fetchGallery}) {
     // const [isImageClicked, setImageClicked] = useState(false);
     const [isHovered, setIsHovered] = useState(false)
@@ -44,7 +49,7 @@ const handleHover = () => {
                 <img src={picGallery.path} onClick={toggleContent} className="post-image"/>)}
             </div> */}
             <div className="image-box" onMouseEnter={handleHover} onMouseLeave={handleHoverExit}>
-                <img src={picGallery.path} className="post-image" alt="Gallery Picture/Desscription"/>
+                <img src={picGallery.path} className="post-image" alt="Gallery Picture/Description"/>
                 {isHovered && (<div className="description-fade">{picGallery.description}
             </div>
             )}
