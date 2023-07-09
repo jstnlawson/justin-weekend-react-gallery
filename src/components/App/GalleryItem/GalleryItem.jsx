@@ -49,7 +49,7 @@ const handleHover = () => {
                 <img src={picGallery.path} onClick={toggleContent} className="post-image"/>)}
             </div> */}
             <div className="image-box" onMouseEnter={handleHover} onMouseLeave={handleHoverExit}>
-                <img src={picGallery.path} className="post-image" alt="Gallery Picture/Desscription"/>
+                <img src={picGallery.path} className="post-image" alt="Gallery Picture/Description"/>
                 {isHovered && (<div className="description-fade">{picGallery.description}
             </div>
             )}
