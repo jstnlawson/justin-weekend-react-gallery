@@ -48,12 +48,17 @@ function App() {
       });
   }
 
+  const handleDeleteItem = (itemId) => {
+    console.log(`Deleting item with ID ${itemId}`);
+  }
+
     return (
+      <>
       <div className="App">
         <GalleryForm addPost={addPost}/>
         <GalleryList fetchGallery={fetchGallery} picGallery={picGallery}/>
-
       </div>
+      </>
     );
 }
 
