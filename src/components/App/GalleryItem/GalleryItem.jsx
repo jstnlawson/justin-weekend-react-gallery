@@ -40,6 +40,17 @@ const handleHover = () => {
     setIsHovered(false);
   }
 
+  const handleDelete = () => {
+    axios
+      .delete(`/gallery/${picGallery.id}`)
+      .then(() => {
+        fetchGallery();
+      })
+      .catch((error) => {
+        console.log('Error deleting item:', error);
+      });
+  };
+
     return (
         <>
         <div className="post-box">
@@ -54,7 +65,10 @@ const handleHover = () => {
             </div>
             )}
       </div>
-            <button onClick={clickGallery} className="like-button">🧡</button>
+            <div className='button-container'>
+            <button onClick={clickGallery} className="like-button">❤️</button>
+            <button onClick={handleDelete} className="delete-button">❌</button>
+            </div>
             <p className="like-text">{picGallery.likes} likes</p>
         </div>
         </>
