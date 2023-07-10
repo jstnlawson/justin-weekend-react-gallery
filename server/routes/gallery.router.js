@@ -41,5 +41,21 @@ router.get('/', (req, res) => {
     })
 }); // END GET Routepublic
 
+//POST route
+router.post('/', (req, res) => {
+    const gallery = req.body;
+    const sqlText = `INSERT INTO gallery (path, description, likes)
+                     VALUES ($1, $2, $3);`;
+    pool.query(sqlText, [gallery.path, gallery.description, gallery.likes])
+        .then((result) => {
+            console.log(`Added picture to the database`, gallery);
+            res.sendStatus(201);
+        })
+        .catch((error) => {
+            console.log(`Error making database query ${sqlText}`, error);
+            res.sendStatus(500); 
+        })
+})
+
 
 module.exports = router;

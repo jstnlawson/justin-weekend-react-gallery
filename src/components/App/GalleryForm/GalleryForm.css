@@ -1,0 +1,52 @@
+.form-container {
+    display: grid;
+    border-right: solid 1px rgb(220, 213, 213);
+    justify-self: left;
+    height: 100vh;
+    width: 15vw;
+    position: fixed;
+    background-color: #fff;
+}
+
+label {
+font-family: sans-serif;
+}
+
+textarea {
+width: 13vw;
+height: 32vh;
+margin: 1px;
+font-family: sans-serif;
+border: 1px solid rgb(220, 213, 213);
+border-radius: 5px;
+resize: none;
+}
+
+.submit-button {
+    height: 32vh;
+    width: 14vw;
+    margin: 1px;
+    background-color: #78a2ee;
+    border-color: #78a2ee;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.submit-button:hover {
+    /* Lighten the button on hover using the brightness() filter */
+    filter: brightness(1.2);
+  }
+
+.plus-symbol {
+    font-size: 14vw;
+    color: #78a2ee;
+}
+
+.create-button {
+    border-right: solid 1px rgb(220, 213, 213);
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    background-color: #fff;
+    color: #78a2ee;
+} 
