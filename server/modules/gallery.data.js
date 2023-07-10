@@ -14,6 +14,8 @@ const galleryItems = [
         description: 'Michael Shannon Fan Club bumper sticker', 
         likes: 1 
     }
+
+    
 ];
 
 module.exports = galleryItems;
