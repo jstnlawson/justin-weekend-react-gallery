@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import axios from 'axios'
 import React from 'react';
 import GalleryList from './GalleryList/GalleryList'
+import GalleryForm from './GalleryForm/GalleryForm'
 import './App.css';
 
 function App() {
@@ -28,9 +29,28 @@ function App() {
     fetchGallery();
   }, [])
 
+  const addPost = (newImagePath, newImageDescription, ) => {
+    axios({
+      method: 'POST',
+      url: '/gallery',
+      data: {
+        path: newImagePath,
+        description: newImageDescription, 
+        likes: 0
+      }
+    })
+      .then( (response) => {
+        console.log('Response:', response);
+        fetchGallery();
+      })
+      .catch(function (error) {
+        console.log('Error on add:', error);
+      });
+  }
+
     return (
       <div className="App">
-        
+        <GalleryForm addPost={addPost}/>
         <GalleryList fetchGallery={fetchGallery} picGallery={picGallery}/>
 
       </div>

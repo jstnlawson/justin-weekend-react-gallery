@@ -8,6 +8,7 @@
     border-radius: 5px;
     justify-self: center;
     margin: 10px;
+    background-color: #fff;
 }
 
 .image-box {
@@ -17,8 +18,8 @@
 
 .post-image {
     display: grid;
-    margin-top: 40px;
-    max-width: 38vw;
+    margin-top: 30px;
+    max-width: 36vw;
     min-width: 200px;
     transition: opacity 0.3s ease-in-out;
 }
@@ -39,6 +40,7 @@
     margin-left: 10px;
     font-size: 12px;
     font-weight: 550;
+    color: #6a8fd3;
 }
 
 .image-box:hover .post-image {

@@ -54,7 +54,7 @@ const handleHover = () => {
             </div>
             )}
       </div>
-            <button onClick={clickGallery} className="like-button">🖤</button>
+            <button onClick={clickGallery} className="like-button">🧡</button>
             <p className="like-text">{picGallery.likes} likes</p>
         </div>
         </>
